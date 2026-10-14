@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=RetroClock
+Name[zh_CN]=时钟
+Comment=Desktop clock
+Exec=RetroClock
+Icon=retroclock
+Categories=Utility;
+Terminal=false
