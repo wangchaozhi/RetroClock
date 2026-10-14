@@ -18,10 +18,14 @@ jobs:
         include:
           - os: windows-latest
             name: windows-x64
+            qt: '6.8.3'
+          # Qt 6.8 在新版 macOS SDK 上链接 AGL 失败，macOS 用更新的 Qt
           - os: macos-latest
             name: macos
+            qt: '6.10.*'
           - os: ubuntu-22.04
             name: linux-x86_64
+            qt: '6.8.3'
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -30,7 +34,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
-          version: '6.8.3'
+          version: ${{ matrix.qt }}
           cache: true
 
       - name: Install Linux dependencies
